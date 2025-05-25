@@ -22,7 +22,7 @@ export default function RootLayout({
           <footer className="w-full py-6 px-6 bg-white/60 border-t">
             <div className="container mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
               <p className="text-sm text-gray-500">© 2025 All Rights Reserved</p>
-              <p className="text-sm text-gray-500">Made by <span className="font-semibold text-blue-600">gideonx10</span></p>
+              <p className="text-sm text-gray-500">Made by <span className="font-semibold text-blue-600">nirmeet47</span></p>
             </div>
           </footer>
         </div>
