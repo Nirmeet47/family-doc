@@ -1,6 +1,6 @@
-import { db } from './firebase';
+import { db, storage } from "@/lib/firebase";
 import { collection, getDocs, addDoc, doc, deleteDoc } from 'firebase/firestore';
-
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 // Get all persons for a user
 export async function getPersonsForUser(uid: string) {
   const snapshot = await getDocs(collection(db, 'users', uid, 'persons'));
@@ -35,4 +35,22 @@ export async function addDocumentForPerson(uid: string, personId: string, data: 
 // Delete a document metadata
 export async function deleteDocumentForPerson(uid: string, personId: string, documentId: string) {
   await deleteDoc(doc(db, 'users', uid, 'persons', personId, 'documents', documentId));
+}
+
+
+export async function uploadDocumentForPerson(
+  uid: string,
+  personId: string,
+  file: File,
+  name: string
+) {
+  const storageRef = ref(storage, `users/${uid}/persons/${personId}/${Date.now()}_${file.name}`);
+  await uploadBytes(storageRef, file);
+  const url = await getDownloadURL(storageRef);
+
+  await addDoc(collection(db, "users", uid, "persons", personId, "documents"), {
+    name,
+    url,
+    uploadedAt: new Date(),
+  });
 }
