@@ -129,7 +129,7 @@ export default function DashboardPage() {
             </div>
             <button
               onClick={() => signOut(auth)}
-              className="flex items-center gap-2 px-5 py-2.5 bg-blue-50 hover:bg-blue-100 text-blue-700 rounded-lg font-medium transition-colors border border-blue-300 hover:border-blue-400"
+              className="flex items-center gap-2 px-5 py-2.5 bg-white hover:bg-blue-50 text-blue-700 rounded-lg font-medium transition-colors border border-blue-300 hover:border-blue-400"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
@@ -163,7 +163,7 @@ export default function DashboardPage() {
                 <div className="flex items-center gap-3">
                   <button
                     onClick={() => setSelectedPerson(null)}
-                    className="flex items-center gap-2 px-4 py-2 bg-blue-50 hover:bg-blue-100 text-blue-700 rounded-lg font-medium transition-colors border border-blue-300 hover:border-blue-400"
+                    className="flex items-center gap-2 px-4 py-2 bg-white hover:bg-blue-50 text-blue-700 rounded-lg font-medium transition-colors border border-blue-300 hover:border-blue-400"
                   >
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -172,7 +172,7 @@ export default function DashboardPage() {
                   </button>
                   <button
                     onClick={() => handleDeletePerson(selectedPerson.id)}
-                    className="flex items-center gap-2 px-4 py-2 bg-red-50 hover:bg-red-100 text-red-600 rounded-lg font-medium transition-colors border border-red-300 hover:border-red-400"
+                    className="flex items-center gap-2 px-4 py-2 bg-white hover:bg-red-50 text-red-600 rounded-lg font-medium transition-colors border border-red-300 hover:border-red-400"
                   >
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
@@ -220,7 +220,7 @@ export default function DashboardPage() {
                     {documents.map(doc => (
                       <div
                         key={doc.id}
-                        className="group bg-blue-50 rounded-xl p-4 border border-blue-300 hover:border-blue-400 hover:bg-blue-100 transition-all duration-200"
+                        className="group bg-white rounded-xl p-4 border border-blue-300 hover:border-blue-400 hover:bg-blue-50 transition-all duration-200"
                       >
                         <div className="flex items-start justify-between mb-3">
                           <div className="flex items-center gap-3 flex-1 min-w-0">
@@ -246,7 +246,7 @@ export default function DashboardPage() {
                           </div>
                           <button
                             onClick={() => handleDeleteDocument(doc.id)}
-                            className="opacity-0 group-hover:opacity-100 p-1.5 text-red-500 hover:text-red-700 hover:bg-red-100 rounded-lg transition-all duration-200"
+                            className="opacity-0 group-hover:opacity-100 p-1.5 text-red-500 hover:text-red-600 hover:bg-red-100 rounded-lg transition-all duration-200"
                             title="Delete document"
                           >
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -285,7 +285,7 @@ export default function DashboardPage() {
                   <p className="text-blue-600 mb-4">
                     Add a new PDF document for <span className="font-semibold">{selectedPerson.name}</span>
                   </p>
-                  <div className="bg-blue-50 rounded-lg p-4 border border-blue-300">
+                  <div className="bg-white rounded-lg p-4 border border-blue-300">
                     <DocumentUpload
                       uid={user.uid}
                       personId={selectedPerson.id}
