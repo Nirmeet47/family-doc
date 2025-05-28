@@ -38,7 +38,7 @@ export default function DashboardPage() {
 
   useEffect(() => {
     if (!authLoading && !user) {
-      router.replace("/signin");
+      router.replace("/");
     }
   }, [authLoading, user, router]);
 
@@ -373,7 +373,7 @@ export default function DashboardPage() {
                       <div
                         key={person.id}
                         onClick={() => handlePersonClick(person)}
-                        className="group bg-blue-50 rounded-xl p-6 cursor-pointer transition-all duration-200 hover:bg-blue-100 border border-blue-300 hover:border-blue-400"
+                        className="group bg-white rounded-xl p-6 cursor-pointer transition-all duration-200 hover:bg-blue-100 border border-blue-300 hover:border-blue-400"
                       >
                         <div className="text-center">
                           <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-500 rounded-xl flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4 transition-all duration-200">

@@ -24,6 +24,10 @@ export default function DocumentUpload({
       setError("Please select a PDF file.");
       return;
     }
+    if (file.size > 204800) {
+    setError("PDF file size must be 200 KB or less.");
+    return;
+    }
     if (!pdfName.trim()) {
       setError("Please enter a document name.");
       return;
