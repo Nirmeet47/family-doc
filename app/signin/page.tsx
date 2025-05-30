@@ -1,10 +1,10 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 
-export default function SignUpPage() {
+export default function SignInPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -17,11 +17,11 @@ export default function SignUpPage() {
     setError(null);
     setIsLoading(true);
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      await signInWithEmailAndPassword(auth, email, password);
       router.push("/dashboard");
     } catch (err: any) {
-      setError("Sign up failed. Please try again.");
-      console.error("SignUp error:", err);
+      setError("Invalid email or password. Please try again.");
+      console.error("SignIn error:", err);
     } finally {
       setIsLoading(false);
     }
@@ -37,8 +37,8 @@ export default function SignUpPage() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
             </svg>
           </div>
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">Create Your FamilyDocs Account</h1>
-          <p className="text-gray-600 text-sm">Get started with your document management</p>
+          <h1 className="text-2xl font-bold text-gray-900 mb-2">Welcome Back</h1>
+          <p className="text-gray-600 text-sm">Sign in to your FamilyDocs account</p>
         </div>
 
         {/* Form Card */}
@@ -81,7 +81,7 @@ export default function SignUpPage() {
                 <input
                   id="password"
                   type={showPassword ? "text" : "password"}
-                  placeholder="Create a password"
+                  placeholder="Enter your password"
                   className="w-full pl-10 pr-12 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                   value={password}
                   onChange={e => setPassword(e.target.value)}
@@ -122,24 +122,24 @@ export default function SignUpPage() {
               {isLoading ? (
                 <div className="flex items-center justify-center space-x-2">
                   <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                  <span>Creating Account...</span>
+                  <span>Signing In...</span>
                 </div>
               ) : (
-                "Create Account"
+                "Sign In"
               )}
             </button>
           </form>
         </div>
 
-        {/* Sign In Link */}
+        {/* Sign Up Link */}
         <div className="mt-6 text-center">
           <p className="text-gray-600 text-sm">
-            Already have an account?{" "}
+            Don't have an account?{" "}
             <a 
-              href="/signin" 
+              href="/signup" 
               className="text-blue-600 hover:text-blue-700 font-medium hover:underline transition-colors"
             >
-              Sign In
+              Sign Up
             </a>
           </p>
         </div>
