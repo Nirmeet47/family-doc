@@ -1,40 +1,57 @@
 # 🛡️ Family Doc
 
-**Family Doc** is a secure, family-centric document vault that lets users manage, upload, and organize important documents for every family member — all in one place.
+**Family Doc** is a secure, family-centric document vault designed to simplify how families store and manage important personal documents — like Aadhar cards, PANs, health records, school certificates, insurance policies, and more.
 
-Built with **Next.js App Router**, **Firebase**, **Tailwind CSS**, and **TypeScript**, it offers a clean interface and seamless experience for organizing personal and family documents digitally.
+It allows each user to maintain a digital folder for every family member, making documents accessible, organized, and safe from loss — all in one centralized and responsive web app.
+
+---
+
+## 💡 Why Family Doc?
+
+Managing physical documents for every family member is chaotic — papers get misplaced, drives become cluttered, and crucial files are hard to retrieve when needed most (travel, hospital visits, official verifications, etc.).
+
+**Family Doc solves this** by:
+- Digitally organizing documents per family member
+- Offering secure access via Firebase Auth
+- Providing a smooth, distraction-free UI for managing uploads
+- Storing documents safely using Firebase Storage
 
 ---
 
 ## 🔧 Tech Stack
 
-- **Next.js 14 (App Router)**
-- **Firebase (Auth, Firestore, Storage)**
-- **Tailwind CSS**
-- **TypeScript**
+- **Next.js 14 (App Router)** — for structured layouts and performance  
+- **Firebase** — Authentication, Firestore (family data), and Storage (files)  
+- **Tailwind CSS** — for responsive and elegant UI  
+- **TypeScript** — for safer and more maintainable code  
 
 ---
 
-## 🎯 Core Features
+## ✨ Features
 
-- Secure Firebase Auth (Email/Password)
-- Add and manage multiple family members
-- Upload, preview, and delete documents per member
-- Fully responsive and minimal UI
-- Organized Firebase Storage structure
+- 🔐 Secure login with Firebase Auth (Email/Password)
+- 👨‍👩‍👧‍👦 Add, view, and manage family members
+- 📂 Upload, preview, and delete documents per member
+- 🧾 Organized storage using member-wise folders
+- 🌐 Responsive design for mobile and desktop
+- 🧠 Typed and modular codebase for scalability
 
 ---
 
-## 📌 Status
+## 📌 Project Status
 
-✅ MVP completed  
-🚧 New features in progress: document reminders, role-based access, tagging, and email notifications.
+✅ MVP completed and deployed  
+🚧 Upcoming:
+- Document reminders
+- Role-based access (Parent/Child)
+- Tagging and advanced search
+- Email notifications for expiring files
 
 ---
 
 ## 👤 Author
 
 **Nirmeet Parmar**  
-[Portfolio](https://nirmee21t.vercel.app) • [GitHub](https://github.com/nirmeet47)
+[Portfolio](https://nirmeet.vercel.app) • [GitHub](https://github.com/nirmeetparmar)
 
-> Built with ❤️ to simplify family document management.
+> Built with ❤️ to help families keep their documents safe, smartly.
