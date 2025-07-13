@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛡️ Family Doc
 
-## Getting Started
+**Family Doc** is a secure, family-centric document vault that lets users manage, upload, and organize important documents for every family member — all in one place.
 
-First, run the development server:
+Built with **Next.js App Router**, **Firebase**, **Tailwind CSS**, and **TypeScript**, it offers a clean interface and seamless experience for organizing personal and family documents digitally.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔧 Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next.js 14 (App Router)**
+- **Firebase (Auth, Firestore, Storage)**
+- **Tailwind CSS**
+- **TypeScript**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🎯 Core Features
 
-To learn more about Next.js, take a look at the following resources:
+- Secure Firebase Auth (Email/Password)
+- Add and manage multiple family members
+- Upload, preview, and delete documents per member
+- Fully responsive and minimal UI
+- Organized Firebase Storage structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📌 Status
 
-## Deploy on Vercel
+✅ MVP completed  
+🚧 New features in progress: document reminders, role-based access, tagging, and email notifications.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 👤 Author
+
+**Nirmeet Parmar**  
+[Portfolio](https://nirmee21t.vercel.app) • [GitHub](https://github.com/nirmeet47)
+
+> Built with ❤️ to simplify family document management.
