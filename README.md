@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛡️ Family Doc
 
-## Getting Started
+**Family Doc** is a secure, family-centric document vault designed to simplify how families store and manage important personal documents — like Aadhar cards, PANs, health records, school certificates, insurance policies, and more.
 
-First, run the development server:
+It allows each user to maintain a digital folder for every family member, making documents accessible, organized, and safe from loss — all in one centralized and responsive web app.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 💡 Why Family Doc?
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Managing physical documents for every family member is chaotic — papers get misplaced, drives become cluttered, and crucial files are hard to retrieve when needed most (travel, hospital visits, official verifications, etc.).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Family Doc solves this** by:
+- Digitally organizing documents per family member
+- Offering secure access via Firebase Auth
+- Providing a smooth, distraction-free UI for managing uploads
+- Storing documents safely using Firebase Storage
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🔧 Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Next.js 14 (App Router)** — for structured layouts and performance  
+- **Firebase** — Authentication, Firestore (family data), and Storage (files)  
+- **Tailwind CSS** — for responsive and elegant UI  
+- **TypeScript** — for safer and more maintainable code  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## ✨ Features
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- 🔐 Secure login with Firebase Auth (Email/Password)
+- 👨‍👩‍👧‍👦 Add, view, and manage family members
+- 📂 Upload, preview, and delete documents per member
+- 🧾 Organized storage using member-wise folders
+- 🌐 Responsive design for mobile and desktop
+- 🧠 Typed and modular codebase for scalability
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 📌 Project Status
+
+✅ MVP completed and deployed  
+🚧 Upcoming:
+- Document reminders
+- Role-based access (Parent/Child)
+- Tagging and advanced search
+- Email notifications for expiring files
+
+---
+
+## 👤 Author
+
+**Nirmeet Parmar**  
+[Portfolio](https://nirmeet.vercel.app) • [GitHub](https://github.com/nirmeetparmar)
+
+> Built with ❤️ to help families keep their documents safe, smartly.
