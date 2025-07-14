@@ -1,10 +1,10 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 
-export default function SignInPage() {
+export default function SignUpPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -17,11 +17,17 @@ export default function SignInPage() {
     setError(null);
     setIsLoading(true);
     try {
-      await signInWithEmailAndPassword(auth, email, password);
+      await createUserWithEmailAndPassword(auth, email, password);
       router.push("/dashboard");
     } catch (err: any) {
-      setError("Invalid email or password. Please try again.");
-      console.error("SignIn error:", err);
+      console.error("SignUp error:", err);
+      if (err.code === "auth/email-already-in-use") {
+        setError("Email is already in use.");
+      } else if (err.code === "auth/weak-password") {
+        setError("Password should be at least 6 characters.");
+      } else {
+        setError("Something went wrong. Please try again.");
+      }
     } finally {
       setIsLoading(false);
     }
@@ -37,8 +43,8 @@ export default function SignInPage() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
             </svg>
           </div>
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">Welcome Back</h1>
-          <p className="text-gray-600 text-sm">Sign in to your FamilyDocs account</p>
+          <h1 className="text-2xl font-bold text-gray-900 mb-2">Create an Account</h1>
+          <p className="text-gray-600 text-sm">Sign up to access FamilyDocs</p>
         </div>
 
         {/* Form Card */}
@@ -81,7 +87,7 @@ export default function SignInPage() {
                 <input
                   id="password"
                   type={showPassword ? "text" : "password"}
-                  placeholder="Enter your password"
+                  placeholder="Create a password"
                   className="w-full pl-10 pr-12 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                   value={password}
                   onChange={e => setPassword(e.target.value)}
@@ -122,24 +128,24 @@ export default function SignInPage() {
               {isLoading ? (
                 <div className="flex items-center justify-center space-x-2">
                   <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                  <span>Signing In...</span>
+                  <span>Creating Account...</span>
                 </div>
               ) : (
-                "Sign In"
+                "Sign Up"
               )}
             </button>
           </form>
         </div>
 
-        {/* Sign Up Link */}
+        {/* Sign In Link */}
         <div className="mt-6 text-center">
           <p className="text-gray-600 text-sm">
-            Don't have an account?{" "}
+            Already have an account?{" "}
             <a 
-              href="/signup" 
+              href="/signin" 
               className="text-blue-600 hover:text-blue-700 font-medium hover:underline transition-colors"
             >
-              Sign Up
+              Sign In
             </a>
           </p>
         </div>
